@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcApi";
+
+package test;
+
+service TestService {
+  rpc GetSmall (SmallRequest) returns (SmallResponse);
+  rpc GetMedium (MediumRequest) returns (MediumResponse);
+  rpc GetLarge (LargeRequest) returns (LargeResponse);
+}
+
+message SmallRequest {
+  string name = 1;
+}
+
+message SmallResponse {
+  string message = 1;
+}
+
+message MediumRequest {
+  string name = 1;
+  string email = 2;
+  string phone = 3;
+}
+
+message MediumResponse {
+  string message = 1;
+  string email = 2;
+  string phone = 3;
+}
+
+message LargeRequest {
+  string name = 1;
+  int32 age = 2;
+  string email = 3;
+  string address = 4;
+  string city = 5;
+  string state = 6;
+  string country = 7;
+  string phone = 8;
+  double salary = 9;
+  bool is_active = 10;
+  repeated string skills = 11;
+  map<string, string> metadata = 12;
+  string company = 13;
+  string department = 14;
+}
+
+message LargeResponse {
+  string name = 1;
+  int32 age = 2;
+  string email = 3;
+  string address = 4;
+  string city = 5;
+  string state = 6;
+  string country = 7;
+  string phone = 8;
+  double salary = 9;
+  bool is_active = 10;
+  repeated string skills = 11;
+  map<string, string> metadata = 12;
+  string company = 13;
+  string department = 14;
+} 
