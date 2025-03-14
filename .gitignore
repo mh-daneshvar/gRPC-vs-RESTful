@@ -1,0 +1,55 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# WebStorm IDE files
+.idea/
+*.iml
+
+# Compiled output
+dist/
+build/
+out/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor backups
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Test coverage reports
+coverage/
+
+# Benchmark logs
+benchmark_results/
+
+# gRPC and REST testing tools
+ghz-results.json
+autocannon-results.json
