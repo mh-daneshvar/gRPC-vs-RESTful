@@ -1,60 +1,64 @@
-# gRPC vs RESTful API Performance Benchmark
+# 🚀 gRPC vs RESTful API Performance Benchmark
 
-## 📌 Project Target
+## 📌 Project Overview
 
-This repository is designed to compare the **performance** of gRPC and RESTful APIs using **small, medium, and large
-payloads**. It includes:
+This repository benchmarks the **performance** of gRPC and RESTful APIs using **small, medium, and large payloads**. It
+includes:
 
-- A **RESTful API** built with Express.js.
-- A **gRPC API** built with Protocol Buffers and Node.js.
-- Automated benchmarking tests using **Autocannon** (for REST) and **ghz** (for gRPC).
+✅ A **RESTful API** built with **Express.js**  
+✅ A **gRPC API** using **Protocol Buffers** and **Node.js**  
+✅ Automated benchmarking with **Autocannon** (REST) and **ghz** (gRPC)
 
-## 🚀 Installation Guide
-
-To set up the project, follow these steps:
+## 🛠 Installation Guide
 
 ### 1️⃣ Clone the Repository
 
 ```sh
-git clone <your-repository-url>
+git clone git@github.com:mh-daneshvar/gRPC-vs-RESTful.git
 cd grpc-vs-restful
 ```
 
 ### 2️⃣ Install Dependencies
 
-Make sure you have **Node.js** (version 16+) installed, then run:
+Ensure **Node.js (v16+)** is installed, then run:
 
 ```sh
 npm install
 ```
 
-### 3️⃣ Install Performance Testing Tools
+### 3️⃣ Install Benchmarking Tools
 
 We use **Autocannon** for RESTful API benchmarking and **ghz** for gRPC.
 
-#### Install Autocannon (For REST)
+#### 📌 Install Autocannon (for REST)
 
 ```sh
 npm install -g autocannon
 ```
 
-#### Install ghz (For gRPC)
+#### 📌 Install ghz (for gRPC)
 
-```sh
-# macOS (Homebrew)
-brew install ghz
+- **macOS (Homebrew)**
+  ```sh
+  brew install ghz
+  ```
 
-# Linux (Using curl)
-curl -sSL https://github.com/bojand/ghz/releases/latest/download/ghz-linux-x86_64.tar.gz | tar xz
-sudo mv ghz /usr/local/bin/
+- **Linux (Using curl)**
+  ```sh
+  curl -sSL https://github.com/bojand/ghz/releases/latest/download/ghz-linux-x86_64.tar.gz | tar xz
+  sudo mv ghz /usr/local/bin/
+  ```
 
-# Windows (Scoop)
-scoop install ghz
-```
+- **Windows (Scoop)**
+  ```sh
+  scoop install ghz
+  ```
+
+---
 
 ## ▶️ Running the Servers
 
-Before running tests, start both servers.
+Before running the tests, start both servers.
 
 ### 1️⃣ Start the RESTful API
 
@@ -62,7 +66,7 @@ Before running tests, start both servers.
 node restful/restServer.js
 ```
 
-The RESTful API will run on **http://localhost:8080**
+📍 Runs on: **http://localhost:8080**
 
 ### 2️⃣ Start the gRPC Server
 
@@ -70,66 +74,69 @@ The RESTful API will run on **http://localhost:8080**
 node grpc/grpcServer.js
 ```
 
-The gRPC server will run on **localhost:5050**
+📍 Runs on: **localhost:5050**
+
+---
 
 ## 📊 Running Performance Tests
 
-Once the servers are running, execute the benchmark tests.
+Once both servers are running, execute the benchmark tests.
 
-### 1️⃣ Run RESTful API Tests
+### 🟢 Run RESTful API Tests
 
 ```sh
 bash tests/test_rest.sh
 ```
 
-### 2️⃣ Run gRPC API Tests
+### 🔵 Run gRPC API Tests
 
 ```sh
 bash tests/test_grpc.sh
 ```
 
-## 📈 Expected Output
+---
 
-The test scripts will generate benchmark results showing **requests per second**, **latency**, and **error rates** for
-each API.
+## 📈 Expected Benchmark Output
 
-### Example Output (REST)
+The tests will measure **requests per second (RPS)**, **latency**, and **error rates**.
 
-```
-🟢 Testing RESTful API (Small Payload)
-Stat    Avg      Stdev    Max
-Req/s   12345.6  ± 0.5%   12500
-Latency 10ms
-...
-
-🟡 Testing RESTful API (Medium Payload)
-...
-
-🔴 Testing RESTful API (Large Payload)
-...
-```
-
-### Example Output (gRPC)
+### 🔹 Example Output (REST)
 
 ```
-🟢 Testing gRPC API (Small Payload)
+🟢 RESTful API (Small Payload)
+Stat     Avg       Stdev    Max
+Req/s    12,345.6  ± 0.5%   12,500
+Latency  10ms
+...
+
+🟡 RESTful API (Medium Payload)
+...
+
+🔴 RESTful API (Large Payload)
+...
+```
+
+### 🔹 Example Output (gRPC)
+
+```
+🟢 gRPC API (Small Payload)
 Summary:
-  Count: 200000
-  Average Latency: 2.5ms
-  Requests/sec: 15000
+  Count: 200,000
+  Avg Latency: 2.5ms
+  Requests/sec: 15,000
 ...
 
-🟡 Testing gRPC API (Medium Payload)
+🟡 gRPC API (Medium Payload)
 ...
 
-🔴 Testing gRPC API (Large Payload)
+🔴 gRPC API (Large Payload)
 ...
 ```
-
-## 📚 License
-
-MIT License - Feel free to use and modify.
 
 ---
 
-🔥 **Happy benchmarking!** Let me know if you need any changes. 🚀
+## 📜 License
+
+📄 **MIT License** – Feel free to use, modify, and contribute!
+
+🔥 **Happy benchmarking!** 🚀
